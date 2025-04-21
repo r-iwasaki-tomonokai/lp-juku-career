@@ -1,3 +1,34 @@
+/* Reset & Common styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+}
+
 .hero {
     position: relative;
     width: 100%;
@@ -99,5 +130,111 @@
         width: 100%;
         max-width: 300px;
         text-align: center;
+    }
+}
+
+/* Problem Section */
+.problem {
+    background-color: #f8f9fa;
+}
+
+.problem-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.problem-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Agitation Section */
+.agitation {
+    background-color: #fff;
+}
+
+.agitation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.agitation-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Solution Section */
+.solution {
+    background-color: #f8f9fa;
+}
+
+.solution-columns {
+    display: flex;
+    gap: 40px;
+    margin-top: 3rem;
+}
+
+.solution-column {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.solution-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.solution-list {
+    list-style: none;
+}
+
+.solution-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.solution-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color, #0066CC);
+}
+
+.solution-btn {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .solution-columns {
+        flex-direction: column;
+    }
+
+    .solution-column {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
     }
 } 

@@ -49,6 +49,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -62,28 +63,21 @@ section {
     z-index: 1;
 }
 
-.hero .container {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .hero-badges {
     position: absolute;
-    top: 20px;
+    top: 80px;
     right: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    z-index: 3;
+    gap: 15px;
+    z-index: 10;
 }
 
 .hero-badge {
-    background: linear-gradient(45deg, #FFD700, #FFA500);
+    background: #fff;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,15 +87,24 @@ section {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     color: #333;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     line-height: 1.2;
-    transform: rotate(-15deg);
+    transform: rotate(-12deg);
+    border: 2px solid #FFD700;
 }
 
 .hero-badge span {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #D4340C;
     font-weight: 900;
+    margin-top: 2px;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-catch {
@@ -159,18 +162,19 @@ section {
 
     .hero-badges {
         position: relative;
-        top: auto;
-        right: auto;
+        top: 0;
+        right: 0;
         flex-direction: row;
         justify-content: center;
-        gap: 15px;
-        margin-bottom: 20px;
+        gap: 10px;
+        margin-bottom: 30px;
     }
 
     .hero-badge {
-        width: 70px;
-        height: 70px;
+        width: 75px;
+        height: 75px;
         font-size: 0.7rem;
+        transform: rotate(-5deg);
     }
 
     .hero-badge span {
@@ -194,6 +198,32 @@ section {
         width: 100%;
         max-width: 300px;
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-badges {
+        gap: 8px;
+    }
+
+    .hero-badge {
+        width: 65px;
+        height: 65px;
+        font-size: 0.65rem;
+        padding: 8px;
+    }
+
+    .hero-badge span {
+        font-size: 0.85rem;
+        margin-top: 1px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
     }
 }
 
@@ -294,10 +324,6 @@ section {
 }
 
 @media (max-width: 480px) {
-    section {
-        padding: 60px 0;
-    }
-
     .section-title {
         font-size: 1.8rem;
     }

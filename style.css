@@ -76,14 +76,6 @@ section {
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.4;
-    text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.catch-line {
-    display: inline;
 }
 
 .hero-badges {
@@ -169,11 +161,6 @@ section {
     .hero-catch {
         font-size: 2rem;
         margin-bottom: 1.5rem;
-        padding-left: 20px;
-    }
-
-    .catch-line {
-        display: block;
     }
 
     .hero-badges {
@@ -204,16 +191,6 @@ section {
         width: 100%;
         max-width: 300px;
         text-align: center;
-    }
-}
-
-@media (min-width: 769px) {
-    .hero-catch {
-        padding-left: 20px;
-    }
-
-    .catch-line:nth-child(2) {
-        display: inline;
     }
 }
 

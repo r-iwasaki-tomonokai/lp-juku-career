@@ -79,6 +79,14 @@ section {
     text-align: center;
 }
 
+.pc-catch {
+    display: block;
+}
+
+.sp-catch {
+    display: none;
+}
+
 .catch-line {
     display: inline;
 }
@@ -168,6 +176,14 @@ section {
         margin-bottom: 1.5rem;
         line-height: 1.6;
         padding: 0 15px;
+    }
+
+    .pc-catch {
+        display: none;
+    }
+
+    .sp-catch {
+        display: block;
     }
 
     .catch-line {

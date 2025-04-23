@@ -479,23 +479,70 @@ nav a {
 .action-columns {
     display: flex;
     gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
 .action-column {
     flex: 1;
-    background-color: #fff;
-    padding: var(--spacing-lg);
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 16px;
+    padding: var(--spacing-xl);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .action-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-xs);
     color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.action-btn {
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: var(--spacing-xl);
+}
+
+.btn-line {
+    background-color: #00B900;
+    color: #fff;
+}
+
+.btn-search {
+    background-color: #2C5697;
+    color: #fff;
+}
+
+.action-list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.action-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.action-list li::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300B900"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') no-repeat center;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 
 .action-subtitle {
@@ -506,10 +553,6 @@ nav a {
 .action-description {
     margin-bottom: var(--spacing-lg);
     line-height: 1.8;
-}
-
-.action-btn {
-    width: 100%;
 }
 
 .action-note {

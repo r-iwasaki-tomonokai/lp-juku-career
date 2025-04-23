@@ -509,6 +509,7 @@ nav a {
     font-weight: 700;
     text-decoration: none;
     margin-bottom: var(--spacing-xl);
+    transition: all 0.3s ease;
 }
 
 .btn-line {
@@ -602,6 +603,18 @@ footer {
 
     nav ul {
         display: none;
+    }
+
+    .action-columns {
+        flex-direction: column;
+    }
+    
+    .action-column {
+        width: 100%;
+    }
+    
+    .action-title {
+        font-size: 1.3rem;
     }
 }
 

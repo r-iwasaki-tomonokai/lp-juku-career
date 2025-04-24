@@ -101,11 +101,12 @@ nav a {
 .hero-buttons {
     display: flex;
     gap: var(--spacing-lg);
-    flex-direction: column;
-    max-width: 600px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-button-group {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
@@ -461,16 +462,24 @@ nav a {
     border-radius: 4px;
     padding: var(--spacing-md) var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
 }
 
 .faq-question h3 {
     color: var(--primary-color);
     font-weight: 700;
+    margin: 0;
+    flex: 1;
 }
 
 .faq-toggle {
     font-size: 1.5rem;
     color: var(--primary-color);
+    margin-left: var(--spacing-md);
+    line-height: 1;
 }
 
 .faq-answer {
@@ -642,6 +651,11 @@ footer {
     
     .solution-title {
         font-size: 1.3rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        max-width: 600px;
     }
 }
 

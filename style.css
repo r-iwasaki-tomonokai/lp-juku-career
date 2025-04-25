@@ -100,6 +100,7 @@ nav a {
 
 .hero-buttons {
     display: flex;
+    justify-content: center;
     gap: var(--spacing-lg);
     max-width: 800px;
     margin: 0 auto;
@@ -110,6 +111,7 @@ nav a {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
+    max-width: 360px;
 }
 
 .button-label {
@@ -655,7 +657,13 @@ footer {
 
     .hero-buttons {
         flex-direction: column;
-        max-width: 600px;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .hero-button-group {
+        width: 100%;
+        max-width: 100%;
     }
 }
 

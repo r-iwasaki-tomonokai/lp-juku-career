@@ -556,6 +556,8 @@ nav a {
     line-height: 1.8;
     text-align: center;
     flex-grow: 1;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .action-btn {
@@ -679,6 +681,12 @@ footer {
         width: 100%;
         max-width: 100%;
     }
+
+    .action-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 var(--spacing-xs);
+    }
 }
 
 @media (max-width: 480px) {
@@ -692,5 +700,10 @@ footer {
 
     .voice-items {
         grid-template-columns: 1fr;
+    }
+
+    .action-description {
+        font-size: 0.9rem;
+        padding: 0;
     }
 } 

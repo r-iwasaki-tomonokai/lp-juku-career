@@ -50,9 +50,15 @@ header .container {
 }
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
 }
 
 nav ul {
@@ -687,6 +693,10 @@ footer {
         line-height: 1.6;
         padding: 0 var(--spacing-xs);
     }
+
+    .logo-image {
+        height: 32px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -705,5 +715,9 @@ footer {
     .action-description {
         font-size: 0.9rem;
         padding: 0;
+    }
+
+    .logo-image {
+        height: 28px;
     }
 } 

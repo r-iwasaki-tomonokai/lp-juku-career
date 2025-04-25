@@ -80,7 +80,7 @@ nav a {
 /* Hero Section */
 .hero {
     padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-xl);
-    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('/lp-juku-career/images/hero-bg.jpg');
+    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('images/original.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;

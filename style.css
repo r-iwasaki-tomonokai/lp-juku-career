@@ -801,6 +801,16 @@ footer {
     .hero-image {
         max-width: 320px;
     }
+    .hero-sub {
+        font-size: 0.9rem !important;
+    }
+    .button-label {
+        font-size: 0.75em !important;
+    }
+    .btn {
+        font-size: 0.825rem !important;
+        padding: 0.9em 1.2em;
+    }
 }
 
 /* heroTextBlock内のテキスト・ボタンを左端に寄せる */

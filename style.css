@@ -759,57 +759,31 @@ footer {
 /* レスポンシブ対応：スマホ時は縦並び */
 @media (max-width: 900px) {
     .hero {
-        background-position: center top;
-        background-size: cover;
+        position: relative;
+        background: none !important;
     }
-    .heroContentWrapper {
-        flex-direction: column;
+    .hero-bg-sp {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        min-height: 180px;
+        max-height: 50vw;
+        z-index: 0;
+        background: url('images/FV.png') no-repeat right center/cover;
     }
     .heroTextBlock .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
+        position: relative;
+        z-index: 1;
+        background: transparent;
     }
-    .hero-catch,
-    .hero-sub {
-        text-align: center;
-        align-items: center;
-        width: 100%;
-    }
-    .hero-buttons {
-        justify-content: center !important;
-        align-items: center !important;
-        flex-direction: column;
-        gap: 1.2rem;
-        width: 100%;
-    }
-    .hero-button-group {
-        align-items: center !important;
-        width: 100%;
-        max-width: 360px;
-    }
-    .heroImageBlock {
-        justify-content: center;
-        margin-top: 16px;
-    }
-    .heroTextBlock {
-        width: 100%;
-    }
-    .hero-image {
-        max-width: 320px;
-    }
-    .hero-sub {
-        font-size: 0.9rem !important;
-    }
-    .button-label {
-        font-size: 0.75em !important;
-    }
-    .btn {
-        font-size: 0.825rem !important;
-        padding: 0.9em 1.2em;
+}
+
+@media (min-width: 901px) {
+    .hero-bg-sp {
+        display: none;
     }
 }
 

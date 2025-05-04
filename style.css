@@ -80,9 +80,9 @@ nav a {
 /* Hero Section */
 .hero {
     padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-xl);
-    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('images/original.jpg');
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0.6) 100%), url('images/FV.png');
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     text-align: left;
 }
 
@@ -730,10 +730,10 @@ footer {
 .heroContentWrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     max-width: 1200px;
     margin: 0 auto;
-    gap: 40px;
+    gap: 0;
 }
 
 .heroTextBlock {
@@ -760,9 +760,15 @@ footer {
 
 /* レスポンシブ対応：スマホ時は縦並び */
 @media (max-width: 900px) {
+    .hero {
+        background-position: center top;
+        background-size: cover;
+    }
     .heroContentWrapper {
         flex-direction: column;
-        gap: 24px;
+    }
+    .heroTextBlock .container {
+        max-width: 100%;
     }
     .heroImageBlock {
         justify-content: center;
@@ -778,16 +784,17 @@ footer {
 
 /* heroTextBlock内のテキスト・ボタンを左端に寄せる */
 .heroTextBlock .container {
+    max-width: 600px;
+    width: 100%;
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
-    max-width: 600px;
-    width: 100%;
     text-align: left;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+    background: transparent;
 }
 
 .hero-catch,

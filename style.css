@@ -80,9 +80,7 @@ nav a {
 /* Hero Section */
 .hero {
     padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-xl);
-    background: linear-gradient(90deg, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0.6) 100%), url('images/FV.png');
-    background-size: cover;
-    background-position: right center;
+    background: url('images/FV.png') no-repeat center center/cover;
     text-align: left;
 }
 

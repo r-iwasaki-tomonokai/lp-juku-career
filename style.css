@@ -768,9 +768,9 @@ footer {
         top: 0;
         left: 0;
         width: 100%;
-        height: auto;
-        min-height: 180px;
-        max-height: 50vw;
+        height: 0;
+        min-height: 0;
+        max-height: none;
         z-index: 0;
         background: url('images/FV.png') no-repeat right center/cover;
     }
@@ -778,6 +778,10 @@ footer {
         position: relative;
         z-index: 1;
         background: transparent;
+    }
+    .hero-catch {
+        position: relative;
+        z-index: 2;
     }
 }
 

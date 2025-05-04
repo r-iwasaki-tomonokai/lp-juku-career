@@ -831,4 +831,44 @@ footer {
         width: 100%;
         max-width: 360px;
     }
+}
+
+/* 1. 改行防止 */
+.nowrap {
+    white-space: nowrap;
+}
+
+/* 2. SP版でCTAボタンを中央揃え強化 */
+@media (max-width: 900px) {
+    .hero-buttons {
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .hero-button-group {
+        align-items: center !important;
+        width: 100%;
+        max-width: 360px;
+    }
+}
+
+/* 3. SP版で背景画像の右端を画面右端に合わせる */
+@media (max-width: 900px) {
+    .hero {
+        background-position: right center !important;
+        background-size: cover !important;
+    }
+}
+
+/* 4. SP版でFVコピーの文字サイズを0.75倍に */
+@media (max-width: 900px) {
+    .hero-catch {
+        font-size: 2.1rem !important;
+    }
+}
+@media (max-width: 480px) {
+    .hero-catch {
+        font-size: 1.35rem !important;
+    }
 } 

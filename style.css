@@ -77,7 +77,10 @@ nav a {
     color: var(--primary-color);
 }
 
-/* Hero Section */
+/* =============================
+ * ファーストビュー（Heroセクション）
+ * PC/スマホ共通の基本スタイル
+ * ============================= */
 .hero {
     padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-xl);
     background: url('images/FV.png') no-repeat center center/cover;
@@ -121,9 +124,11 @@ nav a {
 .button-label {
     font-weight: 700;
     color: var(--primary-color);
+    /* PC/SP共通で改行防止 */
+    white-space: nowrap;
 }
 
-/* Button Styles */
+/* ボタン共通 */
 .btn {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-lg);
@@ -150,6 +155,139 @@ nav a {
 .btn:hover {
     transform: translateY(-2px);
     opacity: 0.9;
+}
+
+/* Heroテキストブロックのレイアウト調整 */
+.heroContentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.heroTextBlock {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* テキスト・ボタンを左端に寄せる */
+.heroTextBlock .container {
+    max-width: 600px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+.hero-catch,
+.hero-sub,
+.hero-buttons {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.hero-buttons {
+    justify-content: flex-start;
+    margin-left: 0;
+}
+
+/* 改行防止用ユーティリティ */
+.nowrap {
+    white-space: nowrap;
+}
+
+/* =============================
+ * スマホ（SP）用スタイル
+ * ============================= */
+@media (max-width: 900px) {
+    /* Hero全体の背景画像を消し、上部だけに表示するためのdivを使う */
+    .hero {
+        position: relative;
+        background: none !important;
+    }
+    /* 上部だけ背景画像を表示するためのdiv */
+    .hero-bg-sp {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0; /* JSや追加CSSで高さ調整可 */
+        min-height: 0;
+        max-height: none;
+        z-index: 0;
+        background: url('images/FV.png') no-repeat right center/cover;
+    }
+    /* Heroテキストブロックを中央寄せ */
+    .heroTextBlock .container {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+    .hero-catch {
+        position: relative;
+        z-index: 2;
+        font-size: 2.1rem !important; /* FVコピーを0.75倍 */
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    .hero-sub {
+        font-size: 0.9rem !important; /* サブコピーを0.75倍 */
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    .hero-buttons {
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+    }
+    .hero-button-group {
+        align-items: center !important;
+        width: 100%;
+        max-width: 360px;
+    }
+    .button-label {
+        font-size: 0.75em !important; /* ラベルを0.75倍 */
+    }
+    .btn {
+        font-size: 0.825rem !important; /* ボタン本文を0.75倍 */
+        padding: 0.9em 1.2em;
+    }
+}
+
+/* さらに小さい端末用の調整 */
+@media (max-width: 480px) {
+    .hero-catch {
+        font-size: 1.35rem !important;
+    }
+}
+
+/* =============================
+ * PC専用の背景画像div非表示
+ * ============================= */
+@media (min-width: 901px) {
+    .hero-bg-sp {
+        display: none;
+    }
 }
 
 /* Problem Section */

@@ -810,7 +810,25 @@ footer {
 @media (max-width: 900px) {
     .heroTextBlock .container {
         max-width: 100%;
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+}
+
+/* 1. 見出しの改行防止 */
+.hero-button-group .button-label {
+    white-space: nowrap;
+}
+
+/* 3. SP版でCTAボタンを中央揃え */
+@media (max-width: 900px) {
+    .hero-buttons {
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-button-group {
+        align-items: center;
+        width: 100%;
+        max-width: 360px;
     }
 } 

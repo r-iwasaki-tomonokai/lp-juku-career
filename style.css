@@ -774,4 +774,38 @@ footer {
     .hero-image {
         max-width: 320px;
     }
+}
+
+/* heroTextBlock内のテキスト・ボタンを左端に寄せる */
+.heroTextBlock .container {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-catch,
+.hero-sub,
+.hero-buttons {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.hero-buttons {
+    justify-content: flex-start;
+    margin-left: 0;
+}
+
+@media (max-width: 900px) {
+    .heroTextBlock .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
 } 

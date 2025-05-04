@@ -83,7 +83,7 @@ nav a {
     background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('images/original.jpg');
     background-size: cover;
     background-position: center;
-    text-align: center;
+    text-align: left;
 }
 
 .hero-catch {
@@ -719,5 +719,59 @@ footer {
 
     .logo-image {
         height: 28px;
+    }
+}
+
+/* =============================
+ * ファーストビュー2カラムレイアウト
+ * @section heroContentWrapper
+ * @description PC時は横並び、スマホ時は縦並び。左：テキスト、右：画像
+ * ============================= */
+.heroContentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.heroTextBlock {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.heroImageBlock {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 0;
+}
+
+.hero-image {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background: #fff;
+}
+
+/* レスポンシブ対応：スマホ時は縦並び */
+@media (max-width: 900px) {
+    .heroContentWrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .heroImageBlock {
+        justify-content: center;
+        margin-top: 16px;
+    }
+    .heroTextBlock {
+        width: 100%;
+    }
+    .hero-image {
+        max-width: 320px;
     }
 } 

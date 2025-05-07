@@ -9,6 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- jQuery & Slick CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="slider.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
     <header>
@@ -27,297 +33,333 @@
         </div>
     </header>
 
-    <main>
-        <!-- ファーストビュー -->
-        <section id="hero" class="hero">
-            <div class="hero-bg-sp"></div>
-            <div class="heroContentWrapper">
-                <div class="heroTextBlock">
-                    <div class="container">
-                        <h2 class="hero-catch">
-                            <span class="pc-catch"><span class="nowrap">塾に転職するなら20年の実績がある</span><br>業界専門サービスで。</span>
-                            <span class="sp-catch">塾に転職するなら<br>20年の実績がある<br>業界専門サービスで。</span>
-                        </h2>
-                        <p class="hero-sub">塾に特化した転職サービスだからこそ出会える求人がある。<br>
-                        塾に特化した求人検索、専門知識を持ったアドバイザー<br>あなたに合う選び方で転職をサポートします</p>
-                        <div class="hero-buttons">
-                            <div class="hero-button-group">
-                                <p class="button-label">■1人で選んで失敗したくない方は</p>
-                                <a href="#" class="btn btn-line">LINEで相談する（無料）</a>
-                            </div>
-                            <div class="hero-button-group">
-                                <p class="button-label">■今すぐこだわり条件で見つけたい方は</p>
-                                <a href="#" class="btn btn-search">自分で求人を探す（無料）</a>
-                            </div>
+    <!-- ファーストビューは背景色なしでそのまま -->
+    <section id="hero" class="hero">
+        <div class="heroContentWrapper">
+            <div class="heroTextBlock">
+                <div class="container">
+                    <h2 class="hero-catch gradient-text">
+                        <span class="pc-catch"><span class="nowrap">塾に転職するなら<br><span class="years-highlight">20年</span>の実績がある</span><br>業界専門サービスで。</span>
+                        <span class="sp-catch">塾に転職するなら<br><span class="years-highlight">20年</span>の実績がある<br>業界専門サービスで。</span>
+                    </h2>
+                    <p class="hero-sub">
+                        <div class="hero-medals">
+                            <img src="images/メダル1.png" alt="登録実績メダル" class="hero-medal-img">
+                            <img src="images/メダル2.png" alt="転職満足度メダル" class="hero-medal-img">
+                        </div>
+                    </p>
+                    <div class="hero-buttons">
+                        <div class="hero-button-group">
+                            <p class="button-label">■1人で選んで失敗したくない方は</p>
+                            <a href="#" class="btn btn-line" style="background-color: #FF8A00; color: #fff; box-shadow: 0 4px 6px rgba(255, 138, 0, 0.25);">LINEで相談する（無料）</a>
+                        </div>
+                        <div class="hero-button-group">
+                            <p class="button-label">■今すぐこだわり条件で見つけたい方は</p>
+                            <a href="#" class="btn btn-search" style="background-color: #FFFFFF; color: #005BBB; border: 2px solid #005BBB; box-shadow: none;">自分で求人を探す（無料）</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Problem -->
-        <section id="problem" class="problem">
-            <div class="container">
-                <div class="problem-content">
-                    <p class="problem-lead">塾業界への転職を考え、求人を探し始めたものの――</p>
-                    <div class="problem-points">
-                        <p>「求人が多すぎて、どれが自分に合うのか分からない」</p>
-                        <p>「塾の雰囲気や働き方が見えず、応募に踏み切れない」</p>
-                        <p>「他のサイトでは分からなかった"塾ごとの違い"が気になる」</p>
-                    </div>
-                    <p class="problem-description">かつて塾バイトで感じた"ありがとう"のやりがいを、正社員としてもう一度実感したい。<br>
-                    その想いはあるのに、塾ごとの特徴や働き方の違いが分からず、選び方に迷ってしまう――。</p>
-                    <p class="problem-conclusion">「この塾で本当に自分らしく働けるのか？」<br>
-                    そんな不安を抱えながら、転職活動を進めていませんか？</p>
+    <!-- ロゴスライダー -->
+    <div class="logo-slider">
+      <div class="slider-track">
+        <img src="images/logo/logo1.png" class="logo-img" alt="logo1">
+        <img src="images/logo/logo2.png" class="logo-img" alt="logo2">
+        <img src="images/logo/logo3.png" class="logo-img" alt="logo3">
+        <img src="images/logo/logo4.png" class="logo-img" alt="logo4">
+        <img src="images/logo/logo5.png" class="logo-img" alt="logo5">
+        <img src="images/logo/logo6.png" class="logo-img" alt="logo6">
+        <img src="images/logo/logo7.png" class="logo-img" alt="logo7">
+        <img src="images/logo/logo8.png" class="logo-img" alt="logo8">
+        <img src="images/logo/logo9.png" class="logo-img" alt="logo9">
+        <img src="images/logo/logo10.png" class="logo-img" alt="logo10">
+        <img src="images/logo/logo11.png" class="logo-img" alt="logo11">
+        <img src="images/logo/logo12.png" class="logo-img" alt="logo12">
+      </div>
+    </div>
+
+    <section id="problem" class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <p class="problem-lead">
+                    <span class="problem-lead-underline pc-lead" style="font-size: 1.8rem;">塾業界への転職を考え求人を探し始めたものの――</span>
+                    <span class="problem-lead-underline sp-lead" style="font-size: 1.8rem;">塾業界への転職を考え<br>求人を探し始めたものの――</span>
+                </p>
+                <div class="problem-bubbles">
+                    <div class="problem-bubble">求人が多すぎて、どれが自分に合うのか分からない</div>
+                    <div class="problem-bubble">塾の雰囲気や働き方が見えず、応募に踏み切れない</div>
+                    <div class="problem-bubble">他のサイトでは分からなかった"塾ごとの違い"が気になる</div>
+                    <div class="problem-bubble">自分のこれまでのキャリアで内定がもらえるか不安</div>
+                    <div class="problem-bubble">面接や書類で何を伝えればいいかわからない</div>
+                    <div class="problem-bubble">ブラックじゃない塾を見つけたいけど、探し方がわからない</div>
+                </div>
+                <p class="problem-description">かつて塾バイトで感じた"ありがとう"のやりがいを、正社員としてもう一度実感したい。<br>
+                その想いはあるのに、塾ごとの特徴や働き方の違いが分からず、選び方に迷ってしまう――。</p>
+                <p class="problem-conclusion">この塾で本当に自分らしく働けるのか？<br>
+                そんな不安を抱えながら、転職活動を進めていませんか？</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance" class="performance">
+        <div class="container">
+            <h2 class="section-title">このまま、また"なんとなく"で職場を選んでしまうかもしれません。</h2>
+            <div class="performance-content">
+                <p>迷い続けた結果、焦って選んだ転職先が、<br>
+                結局また"合わない環境"だった――そんな後悔は避けたいはずです。</p>
+                <p class="performance-emphasis">本当に大切なのは、自分に合う職場を見極める手段を持つこと。<br>
+                その一歩を踏み出せていますか？</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution" class="solution">
+        <div class="performance-title-strong">
+            <span class="performance-title-em">日本一塾に詳しい</span>我々に、塾の転職は<span class="performance-title-em">お任せください</span>
+        </div>
+        <div class="container">
+            <div class="performance-items">
+                <div class="performance-item">
+                    <div class="performance-label">塾業界の採用支援実績</div>
+                    <div class="performance-number">20<span class="performance-unit">年</span></div>
+                </div>
+                <div class="performance-item">
+                    <div class="performance-label">支援実績累計</div>
+                    <div class="performance-number">11万人<span class="performance-unit">以上</span></div>
+                </div>
+                <div class="performance-item">
+                    <div class="performance-label">累計教室数</div>
+                    <div class="performance-number">66,800<span class="performance-unit">教室</span></div>
+                </div>
+                <div class="performance-item">
+                    <div class="performance-label">10年以上取引継続企業</div>
+                    <div class="performance-number">48<span class="performance-unit">%</span></div>
                 </div>
             </div>
-        </section>
-
-        <!-- Agitation -->
-        <section id="agitation" class="agitation">
-            <div class="container">
-                <h2 class="agitation-catch">「このまま、また"なんとなく"で職場を選んでしまうかもしれません。」</h2>
-                <div class="agitation-content">
-                    <p>迷い続けた結果、焦って選んだ転職先が、<br>
-                    結局また"合わない環境"だった――そんな後悔は避けたいはずです。</p>
-                    <p class="agitation-emphasis">本当に大切なのは、自分に合う職場を見極める手段を持つこと。<br>
-                    その一歩を踏み出せていますか？</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution -->
-        <section id="solution" class="solution">
-            <div class="container">
-                <h2 class="section-title">塾業界の採用支援20年。<br>6,600社・66,800教室の実績と、48％が10年以上の継続取引。<br>15万件以上の口コミで裏付けられた信頼性。</h2>
-                <div class="solution-columns">
-                    <div class="solution-column">
-                        <h3 class="solution-title">1人で選んで失敗したくない方は</h3>
-                        <a href="#" class="solution-btn btn-line">LINEで相談する（無料）</a>
-                        <ul class="solution-list">
-                            <li>塾業界出身の専任アドバイザーが、対話を通じて"あなたの強み・希望"を言語化</li>
-                            <li>15万件の口コミを活用し、校風・働き方まで「この塾が合う理由」を具体的に提案</li>
-                            <li>書類作成〜面接対策・内定まで。伴走サポートで安心して転職活動を進められる</li>
-                            <li>こちらのサポーターから連絡差し上げるのでご安心ください。無理な提案は一切なし、あなたのペースで進められます</li>
-                        </ul>
-                    </div>
-                    <div class="solution-column">
-                        <h3 class="solution-title">今すぐこだわり条件で見つけたい方は</h3>
-                        <a href="#" class="solution-btn btn-search">自分で探す（無料）</a>
-                        <ul class="solution-list">
-                            <li>塾特化の詳細検索（指導形態／学年／職種／受験 など）でこだわり求人が見つかる</li>
-                            <li>簡単3分で応募。内定まで自分のスピードで進められる</li>
-                            <li>会員限定で希望条件にマッチするオファー・スカウトが塾から届く</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="solution-campaign">
-                    <p class="campaign-title">塾業界に転職したくて迷ってたら<br>まずは気軽に相談ください！</p>
-                    <div class="campaign-box">
-                        <p class="campaign-label">★今なら★</p>
-                        <p class="campaign-text">LINE登録者限定で塾転職向けの<br>自己PR作成ツールを配布中！</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Narrowing -->
-        <section id="narrow" class="narrow">
-            <div class="container">
-                <h2 class="section-title">こんな方におすすめです：</h2>
-                <ul class="narrow-list">
-                    <li>今の職場にモヤモヤしているけど、転職に踏み切れない方</li>
-                    <li>「生徒にありがとう」と言われたあの感覚を、もう一度味わいたい方</li>
-                    <li>自己分析や面接が苦手で、選考に自信がない方</li>
-                    <li>比較するのが苦手で、「どこが良いのか分からない…」という不安を抱えている方</li>
-                    <li>塾業界でキャリアアップしたいが、どの塾を選ぶべきかわからない方</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 実績紹介 -->
-        <section id="performance" class="performance">
-            <div class="container">
-                <h2 class="section-title">日本一塾に詳しい我々に、塾の転職はお任せください！</h2>
-                <div class="performance-items">
-                    <div class="performance-item">
-                        <div class="performance-number">11万人<span>以上</span></div>
-                        <p class="performance-text">支援実績<br>累計</p>
-                    </div>
-                    <div class="performance-item">
-                        <div class="performance-number">6,600社</div>
-                        <p class="performance-text">取引先<br>過去6,600社・66,800教室</p>
-                    </div>
-                    <div class="performance-item">
-                        <div class="performance-number">48<span>%</span></div>
-                        <p class="performance-text">継続取引<br>10年以上継続</p>
-                    </div>
-                    <div class="performance-item">
-                        <div class="performance-number">20<span>年</span></div>
-                        <p class="performance-text">専門性<br>塾業界に特化</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- アドバイザー紹介 -->
-        <section id="advisor" class="advisor">
-            <div class="container">
-                <div class="advisor-content">
-                    <p class="advisor-lead">塾ステキャリアエージェントのアドバイザーは、教育現場のリアルを知る元塾講師・塾長経験者たち。<br>
-                    だからこそ、あなたが感じている不安や期待に寄り添えます。</p>
-                    <ul class="advisor-list">
-                        <li>・「塾バイトなど過去の経験をどう面接へ棚卸するか」</li>
-                        <li>・「教室長・講師どちらに向いているか」</li>
+            <div class="solution-columns">
+                <div class="solution-column">
+                    <h3 class="solution-title">1人で選んで失敗したくない方は</h3>
+                    <a href="#" class="solution-btn btn-line" style="background-color: #FF8A00; color: #fff; box-shadow: 0 4px 6px rgba(255, 138, 0, 0.25);">LINEで相談する（無料）</a>
+                    <ul class="solution-list">
+                        <li><span class="solution-em">塾業界出身の専任アドバイザー</span>が、対話を通じて"あなたの<span class="solution-em">強み・希望</span>"を言語化</li>
+                        <li><span class="solution-em">15万件の口コミ</span>から、<span class="solution-em">校風・働き方</span>がわかるので、その塾が合う理由を<span class="solution-em">具体的に提案</span></li>
+                        <li><span class="solution-em">書類作成〜面接対策・内定</span>まで。<span class="solution-em">伴走サポート</span>で安心して転職活動を進められる</li>
+                        <li>こちらのアドバイザーから<span class="solution-em">連絡差し上げる</span>のでご安心ください。<span class="solution-em">無理な提案は一切なし</span>、あなたのペースで進められます</li>
                     </ul>
-                    <p class="advisor-conclusion">など、単なる求人紹介ではなく、キャリアの可能性を一緒に描いてくれる存在です。</p>
+                </div>
+                <div class="solution-column">
+                    <h3 class="solution-title">今すぐこだわり条件で見つけたい方は</h3>
+                    <a href="#" class="solution-btn btn-search" style="background-color: #FFFFFF; color: #005BBB; border: 2px solid #005BBB; box-shadow: none;">自分で探す（無料）</a>
+                    <ul class="solution-list">
+                        <li><span class="solution-em">塾特化の詳細検索</span>（指導形態／学年／職種／受験 など）でこだわり求人が見つかる</li>
+                        <li><span class="solution-em">簡単3分</span>で応募。内定まで<span class="solution-em">自分のスピード</span>で進められる</li>
+                        <li><span class="solution-em">会員限定</span>で希望条件にマッチする<span class="solution-em">オファー・スカウト</span>が塾から届く</li>
+                        <li>途中で悩んだら<span class="solution-em">LINEでアドバイザーに相談もOK</span>。必要に応じてご活用下さい</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+            <div class="solution-campaign">
+                <div class="campaign-label-pink">
+                    とりあえず悩んでいたら相談してみて！
+                </div>
+                <a href="#" class="btn btn-line solution-cta solution-cta-pill" style="background-color: #FF8A00; color: #fff; box-shadow: 0 4px 6px rgba(255, 138, 0, 0.25);">
+                    <i class="fa-brands fa-line"></i> LINEで聞いてみる（無料）
+                    <span class="solution-cta-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                </a>
+                <div class="campaign-gift-box">
+                    <div class="campaign-gift-title">
+                        <span class="campaign-gift-title-line"></span>
+                        <span class="campaign-gift-title-text">▲今ならLINE特典もらえる！▲</span>
+                        <span class="campaign-gift-title-line"></span>
+                    </div>
+                    <div class="campaign-gift-maintext">
+                        <div class="campaign-gift-maintext-lead">塾業界の転職に特化した</div>
+                        <div class="campaign-gift-maintext-strong">自己PR作成キット</div>
+                        <div class="campaign-gift-maintext-lead">を配布中！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- 利用者の声 -->
-        <section id="voice" class="voice">
-            <div class="container">
-                <h2 class="section-title">利用者の声</h2>
-                <div class="voice-items">
-                    <div class="voice-item">
-                        <div class="voice-content">
-                            <p>「休職中で不安だらけでしたが、強みの整理から面接対策まで丁寧に寄り添ってもらい、前向きに転職活動ができました」</p>
-                        </div>
-                        <div class="voice-person">
-                            <p>28歳・女性</p>
-                        </div>
-                    </div>
-                    <div class="voice-item">
-                        <div class="voice-content">
-                            <p>「家庭との両立が不安でしたが、安定して働ける塾を紹介してもらえたおかげで、将来を見据えた転職が実現しました」</p>
-                        </div>
-                        <div class="voice-person">
-                            <p>35歳・男性</p>
-                        </div>
-                    </div>
-                    <div class="voice-item">
-                        <div class="voice-content">
-                            <p>「耳障りの良い志望動機じゃなくて、本音を引き出してくれたおかげで、自信を持って面接に挑めました」</p>
-                        </div>
-                        <div class="voice-person">
-                            <p>36歳・男性</p>
-                        </div>
-                    </div>
-                    <div class="voice-item">
-                        <div class="voice-content">
-                            <p>「何を重視して転職すべきか、一緒に整理してもらえたことで、迷わず納得できる選択ができました」</p>
-                        </div>
-                        <div class="voice-person">
-                            <p>26歳・男性</p>
-                        </div>
-                    </div>
-                    <div class="voice-item">
-                        <div class="voice-content">
-                            <p>「経歴に自信がなかったけど、丁寧なヒアリングで強みを引き出してもらい、自分に合う塾に出会えました」</p>
-                        </div>
-                        <div class="voice-person">
-                            <p>24歳・男性</p>
-                        </div>
-                    </div>
-                    <div class="voice-item">
-                        <div class="voice-content">
-                            <p>「塾ごとの特徴を教えてもらい、納得できる基準で企業を選べたのが良かったです」</p>
-                        </div>
-                        <div class="voice-person">
-                            <p>37歳・男性</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="advisor" class="advisor">
+        <div class="container advisor-flex advisor-blue-block">
+            <div class="advisor-text-block">
+                <h2 class="advisor-copy">塾業界専門のアドバイザー</h2>
+                <p class="advisor-lead">
+                    相談に乗るのは、教育現場のリアルを知る元塾講師・塾長経験者たち。<br>
+                    だからこそ、あなたが感じている不安や期待に寄り添えます。
+                </p>
+                <ul class="advisor-list">
+                    <li>・塾バイトなど過去の経験をどう面接へ棚卸するか</li>
+                    <li>・教室長・講師どちらに向いているか</li>
+                </ul>
+                <p class="advisor-conclusion">
+                    など、単なる求人紹介ではなく<br>キャリアの可能性を一緒に描いてくれる存在です。
+                </p>
             </div>
-        </section>
+            <div class="advisor-photo-block">
+                <img src="images/アドバイザー1.png" alt="アドバイザー1" class="advisor-photo">
+                <img src="images/アドバイザー2.png" alt="アドバイザー2" class="advisor-photo">
+                <img src="images/アドバイザー1.png" alt="アドバイザー3" class="advisor-photo">
+            </div>
+        </div>
+    </section>
 
-        <!-- FAQ -->
-        <section id="faq" class="faq">
-            <div class="container">
-                <h2 class="section-title">よくある質問</h2>
-                <div class="faq-items">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Q1：教育業界の経験がなくても応募できますか？</h3>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>はい、問題ありません。実際に、他業界からの転職成功者も多数います。</p>
-                            <p>塾バイトや家庭教師などの経験がある方はもちろん、教育に関心がある方や"誰かの成長に関わる仕事がしたい"という想いがある方も歓迎しています。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Q2：塾バイトしか経験がないのですが、正社員として働けるでしょうか？</h3>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>むしろ、塾バイト経験者は大歓迎です！</p>
-                            <p>アルバイト時代に培った「指導力」や「コミュニケーション力」「生徒との信頼関係づくり」は、塾業界で正社員として活躍するための大きな強みになります。</p>
-                            <p>さらに、塾ステキャリアエージェントでは、あなたの経験を面接でしっかり評価される形に言語化し、選考通過まで徹底サポート！</p>
-                            <p>「バイト経験しかない」と不安に感じている方こそ、ぜひご相談ください。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Q3：転職をまだ決めていない段階でも相談していいですか？</h3>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>もちろん大丈夫です。</p>
-                            <p>「自分に合う職場ってどこだろう？」という段階の方も多くご相談いただいています。</p>
-                            <p>まずは情報収集や気軽な相談からスタートし、一緒にキャリアを整理していきましょう。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Q4：LINEでの相談って、どのくらいのやり取りが必要ですか？</h3>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>初回はカンタンな質問に答えるだけでOK。アドバイザーが状況に応じて個別に対応します。</p>
-                            <p>「1回話して終わり」ではなく、あなたのペースに合わせて伴走型でサポートします。</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Q5：紹介された塾の内情や雰囲気も教えてもらえるのですか？</h3>
-                            <span class="faq-toggle">+</span>
-                        </div>
-                        <div class="faq-answer">
-                            <p>はい、転職支援申込者の方には、口コミ・評判・職場の雰囲気など定性的な情報もお伝えしています。</p>
-                            <p>「どんな人が働いているか」「指導方針」「教室長の考え方」まで把握しているからこそ、安心して選べるサポートが可能です。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="agitation" class="agitation">
+        <div class="container">
+            <h2 class="section-title">こんな方におすすめです：</h2>
+            <ul class="narrow-list">
+                <li>今の職場に<span class="narrow-underline">モヤモヤ</span>しているけど、<span class="narrow-underline">転職に踏み切れない</span>方</li>
+                <li>生徒の志望校合格でしか得られない、あの<span class="narrow-underline">やりがいをもう一度</span>味わいたい方</li>
+                <li>自己分析や面接が苦手で、<span class="narrow-underline">選考に自信がない</span>方</li>
+                <li><span class="narrow-underline">比較するのが苦手</span>で、<span class="narrow-underline">どこが良いのか分からない</span>という不安を抱えている方</li>
+                <li>塾業界で<span class="narrow-underline">キャリアアップ</span>したいが、<span class="narrow-underline">どの塾を選ぶべきか</span>わからない方</li>
+            </ul>
+        </div>
+    </section>
 
-        <!-- Action -->
-        <section id="action" class="action">
-            <div class="container">
-                <h2 class="section-title">あなたの"合う塾"、2つの方法で見つけられます</h2>
-                <p class="action-lead">塾に転職するなら、塾講師ステーションキャリア！</p>
-                <div class="action-columns">
-                    <div class="action-column">
-                        <h3 class="action-title">LINEで相談する（無料）</h3>
-                        <p class="action-subtitle">（プロと一緒に考えたい方へ）</p>
-                        <p class="action-description">「比較が苦手」「選べない」「誰かに導いてほしい」そんな方に。<br>
-                        こちらのサポーターから連絡差し上げるのでご安心ください。無理な提案は一切なし、あなたのペースで進められます。</p>
-                        <a href="#" class="btn btn-line action-btn">LINEで相談する（無料）</a>
+    <section id="voice" class="voice">
+        <div class="container">
+            <h2 class="section-title">利用者の声</h2>
+            <div class="voice-items">
+                <div class="voice-item">
+                    <div class="voice-content">
+                        <p>休職中で不安だらけでしたが、強みの整理から面接対策まで丁寧に寄り添ってもらい、前向きに転職活動ができました</p>
                     </div>
-                    <div class="action-column">
-                        <h3 class="action-title">自分で求人を探す（無料）</h3>
-                        <p class="action-subtitle">（条件からじっくり比較したい方へ）</p>
-                        <p class="action-description">「自分の希望条件で絞って、塾を見比べたい」あなたに。</p>
-                        <a href="#" class="btn btn-search action-btn">求人を探してみる</a>
+                    <div class="voice-person">
+                        <p>28歳・女性</p>
                     </div>
                 </div>
-                <p class="action-note">※どちらを選んでも、面接対策・書類添削などサポートは無料です。</p>
+                <div class="voice-item">
+                    <div class="voice-content">
+                        <p>家庭との両立が不安でしたが、安定して働ける塾を紹介してもらえたおかげで、将来を見据えた転職が実現しました</p>
+                    </div>
+                    <div class="voice-person">
+                        <p>35歳・男性</p>
+                    </div>
+                </div>
+                <div class="voice-item">
+                    <div class="voice-content">
+                        <p>耳障りの良い志望動機じゃなくて、本音を引き出してくれたおかげで、自信を持って面接に挑めました</p>
+                    </div>
+                    <div class="voice-person">
+                        <p>36歳・男性</p>
+                    </div>
+                </div>
+                <div class="voice-item">
+                    <div class="voice-content">
+                        <p>何を重視して転職すべきか、一緒に整理してもらえたことで、迷わず納得できる選択ができました</p>
+                    </div>
+                    <div class="voice-person">
+                        <p>26歳・男性</p>
+                    </div>
+                </div>
+                <div class="voice-item">
+                    <div class="voice-content">
+                        <p>経歴に自信がなかったけど、丁寧なヒアリングで強みを引き出してもらい、自分に合う塾に出会えました</p>
+                    </div>
+                    <div class="voice-person">
+                        <p>24歳・男性</p>
+                    </div>
+                </div>
+                <div class="voice-item">
+                    <div class="voice-content">
+                        <p>塾ごとの特徴を教えてもらい、納得できる基準で企業を選べたのが良かったです</p>
+                    </div>
+                    <div class="voice-person">
+                        <p>37歳・男性</p>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q1：教育業界の経験がなくても応募できますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、問題ありません。実際に、他業界からの転職成功者も多数います。</p>
+                        <p>塾バイトや家庭教師などの経験がある方はもちろん、教育に関心がある方や"誰かの成長に関わる仕事がしたい"という想いがある方も歓迎しています。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q2：塾バイトしか経験がないのですが、正社員として働けるでしょうか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>むしろ、塾バイト経験者は大歓迎です！</p>
+                        <p>アルバイト時代に培った指導力やコミュニケーション力生徒との信頼関係づくりは、塾業界で正社員として活躍するための大きな強みになります。</p>
+                        <p>さらに、塾ステキャリアエージェントでは、あなたの経験を面接でしっかり評価される形に言語化し、選考通過まで徹底サポート！</p>
+                        <p>バイト経験しかないと不安に感じている方こそ、ぜひご相談ください。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q3：転職をまだ決めていない段階でも相談していいですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>もちろん大丈夫です。</p>
+                        <p>自分に合う職場ってどこだろう？という段階の方も多くご相談いただいています。</p>
+                        <p>まずは情報収集や気軽な相談からスタートし、一緒にキャリアを整理していきましょう。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q4：LINEでの相談って、どのくらいのやり取りが必要ですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>初回はカンタンな質問に答えるだけでOK。アドバイザーが状況に応じて個別に対応します。</p>
+                        <p>1回話して終わりではなく、あなたのペースに合わせて伴走型でサポートします。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Q5：紹介された塾の内情や雰囲気も教えてもらえるのですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、転職支援申込者の方には、口コミ・評判・職場の雰囲気など定性的な情報もお伝えしています。</p>
+                        <p>どんな人が働いているか指導方針教室長の考え方まで把握しているからこそ、安心して選べるサポートが可能です。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="action" class="action">
+        <div class="container">
+            <h2 class="section-title">あなたに"合う塾"、2つの方法で見つけられます</h2>
+            <p class="action-lead">塾に転職するなら、塾講師ステーションキャリア！</p>
+            <div class="action-columns">
+                <div class="action-column">
+                    <h3 class="action-title">LINEで相談する</h3>
+                    <p class="action-subtitle">（プロと一緒に考えたい方へ）</p>
+                    <p class="action-description">比較が苦手選べない誰かに導いてほしいそんな方に。<br>
+                    こちらから連絡差し上げるのでご安心ください。無理な提案は一切なし、あなたのペースで進められます。</p>
+                    <a href="#" class="btn btn-line action-btn" style="background-color: #FF8A00; color: #fff; box-shadow: 0 4px 6px rgba(255, 138, 0, 0.25);">LINEで相談する（無料）</a>
+                </div>
+                <div class="action-column">
+                    <h3 class="action-title">自分で求人を探す</h3>
+                    <p class="action-subtitle">（条件からじっくり比較したい方へ）</p>
+                    <p class="action-description">自分の希望条件で絞って、塾を見比べたいあなたに。</p>
+                    <a href="#" class="btn btn-search action-btn" style="background-color: #FFFFFF; color: #005BBB; border: 2px solid #005BBB; box-shadow: none;">求人を探してみる</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
@@ -325,6 +367,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- スライダー用JS -->
+    <script src="slider.js"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 /**
  * 塾ステキャリアエージェントのLPサイト用JavaScript
  * FAQのアコーディオン機能とスムーズスクロールを実装
+ * ロゴスライダーはシームレスな無限ループで流れる
  */
 
 document.addEventListener('DOMContentLoaded', function() {

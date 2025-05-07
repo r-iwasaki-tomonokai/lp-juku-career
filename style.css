@@ -23,13 +23,17 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--light-gray);
+    background: #f3fbff;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 1.2rem;
+    word-break: break-word;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 /* Header */
@@ -77,24 +81,122 @@ nav a {
     color: var(--primary-color);
 }
 
+/*
+ * LP全体デザインリファイン
+ * 外側：青色、各セクション：現状の白・灰色を活かしたブロック化、区切り線追加、角丸・影の整理、余白調整
+ * 2024/06/09
+ */
+
 /* =============================
- * ファーストビュー（Heroセクション）
- * PC/スマホ共通の基本スタイル
+ * セクション背景色をすべて廃止、bodyの青色のみ
+ * セクション切り替えは.section-dividerの線で表現
  * ============================= */
+body {
+    background: #f3fbff;
+}
+
+.problem, .agitation, .solution, .narrow, .performance, .advisor, .voice, .faq, .action {
+    background: transparent !important;
+    padding: 64px 0 64px 0;
+}
+
+/* セクションごとの背景色指定（新しい順番・色） */
+/* セクションごとの背景色指定（新しい順番・色） */
+.problem {
+  background: #F5F7FA !important; /* ライトグレー（ニュートラル） */
+}
+
+.performance {
+  background: #FFF8E8 !important; /* ライトグレー（ニュートラル） */
+}
+
+.solution {
+  background: #EAF3FF !important; /* ブランド薄ブルー */
+}
+
+.advisor {
+  background: #E3F2FD !important; /* さらに淡いブランドブルー */
+}
+
+.agitation {
+    background: #F5F7FA !important; /* ホワイト */
+  }
+  
+.voice {
+  background: #FFFFFF !important; /* ホワイト */
+}
+
+.faq {
+    background: #EAF3FF !important; /* ホワイト */
+  }
+  
+
+.action {
+    background: #005BBB !important; /* ニュートラルグレー */
+}
+
+/* セクション間の区切り線（濃いめの灰色） */
+.section-divider {
+    width: 100vw;
+    height: 2px;
+    background: #cccccc;
+    margin: 0 auto;
+    border: none;
+}
+
+@media (max-width: 900px) {
+    .problem, .agitation, .solution, .narrow, .performance, .advisor, .voice, .faq, .action {
+        padding: 32px 0 32px 0;
+    }
+    .section-divider {
+        height: 1px;
+    }
+    .performance-items {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+}
+
+/* =============================
+ * LP全体の背景色と中央白ボックスレイアウト
+ * ============================= */
+.main-wrapper {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18);
+    max-width: 1200px;
+    margin: 0 auto 48px auto;
+    padding: 0 2.5vw 48px 2.5vw;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* FV（.hero）は背景色なしでそのまま */
 .hero {
     padding: calc(70px + var(--spacing-xl)) 0 var(--spacing-xl);
     background: url('images/FV.png') no-repeat center center/cover;
     text-align: left;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
 }
 
 .hero-catch {
-    font-size: 2.8rem;
+    font-size: 3.8rem;
     font-weight: 700;
     line-height: 1.4;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom:0rem;
     color: var(--primary-color);
 }
 
+/* 20年だけオレンジに */
+.years-highlight{
+    color:#FF8A00 !important;       /* オレンジ */
+    background:none !important;     /* gradient-text の背景を打ち消す */
+    -webkit-text-fill-color:#FF8A00;/* Safari 対策 */
+  }
+
+  
 .sp-catch {
     display: none;
 }
@@ -103,6 +205,7 @@ nav a {
     font-size: 1.2rem;
     margin-bottom: var(--spacing-xl);
     line-height: 1.8;
+    background: transparent;
 }
 
 .hero-buttons {
@@ -123,12 +226,10 @@ nav a {
 
 .button-label {
     font-weight: 700;
-    color: var(--primary-color);
-    /* PC/SP共通で改行防止 */
+    color: var(--text-color);
     white-space: nowrap;
 }
 
-/* ボタン共通 */
 .btn {
     display: inline-block;
     padding: var(--spacing-md) var(--spacing-lg);
@@ -157,7 +258,6 @@ nav a {
     opacity: 0.9;
 }
 
-/* Heroテキストブロックのレイアウト調整 */
 .heroContentWrapper {
     display: flex;
     align-items: center;
@@ -172,9 +272,8 @@ nav a {
     min-width: 0;
 }
 
-/* テキスト・ボタンを左端に寄せる */
 .heroTextBlock .container {
-    max-width: 600px;
+    max-width: 1000px !important;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -204,28 +303,21 @@ nav a {
     white-space: nowrap;
 }
 
+/* サブコピーのPC/SP表示切り替え */
+.pc-sub { display: inline; }
+.sp-sub { display: none; }
+
 /* =============================
- * スマホ（SP）用スタイル
+ * スマホ（SP）用スタイル（必ずファイル末尾に記載）
  * ============================= */
 @media (max-width: 900px) {
-    /* Hero全体の背景画像を消し、上部だけに表示するためのdivを使う */
+    /* Heroの背景画像をSP用に切り替え */
     .hero {
-        position: relative;
-        background: none !important;
+        background: url('images/FV.png') no-repeat center center/cover !important;
     }
-    /* 上部だけ背景画像を表示するためのdiv */
-    .hero-bg-sp {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0; /* JSや追加CSSで高さ調整可 */
-        min-height: 0;
-        max-height: none;
-        z-index: 0;
-        background: url('images/FV.png') no-repeat right center/cover;
-    }
+    /* サブコピーの表示切り替え */
+    .pc-sub { display: none; }
+    .sp-sub { display: inline; font-size: 0.95rem; }
     /* Heroテキストブロックを中央寄せ */
     .heroTextBlock .container {
         position: relative;
@@ -242,8 +334,7 @@ nav a {
     .hero-catch {
         position: relative;
         z-index: 2;
-        font-size: 2.1rem !important; /* FVコピーを0.75倍 */
-        text-align: center;
+        font-size: 2.1rem !important; 
         align-items: center;
         width: 100%;
     }
@@ -274,20 +365,14 @@ nav a {
     }
 }
 
-/* さらに小さい端末用の調整 */
 @media (max-width: 480px) {
     .hero-catch {
         font-size: 1.35rem !important;
     }
 }
 
-/* =============================
- * PC専用の背景画像div非表示
- * ============================= */
 @media (min-width: 901px) {
-    .hero-bg-sp {
-        display: none;
-    }
+    .sp-sub { display: none; }
 }
 
 /* Problem Section */
@@ -298,10 +383,30 @@ nav a {
 }
 
 .problem-lead {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-lg);
+    display: block;
     text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+/* リード文に太めの黄色い下線を引く（PC/SP切り替え） */
+.problem-lead-underline {
+    display: inline;
+    background: none;
+    border-bottom: 5px solid #ffe600;
+    padding-bottom: 0.1em;
+    font-weight: 700;
+}
+.pc-lead { display: inline; }
+.sp-lead { display: none; }
+@media (max-width: 900px) {
+    .pc-lead { display: none; }
+    .sp-lead { display: inline; }
+    .problem-lead-underline {
+        font-size: 1.1rem;
+        border-bottom-width: 4px;
+    }
 }
 
 .problem-points {
@@ -380,11 +485,11 @@ nav a {
     background-color: #fff;
     padding: var(--spacing-xl);
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18) !important;
 }
 
 .solution-title {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -429,32 +534,93 @@ nav a {
 }
 
 .solution-campaign {
-    text-align: center;
-    margin-top: var(--spacing-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
 }
-
-.campaign-title {
-    font-size: 1.4rem;
+.campaign-label-pink {
+    background: #2A4DBF;
+    color: #fff;
+    font-size: 0.95rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-lg);
-}
-
-.campaign-box {
-    background-color: #fff;
-    padding: var(--spacing-lg);
-    border-radius: 12px;
+    border-radius: 12px 12px 12px 12px;
+    padding: 0.25em 1.2em 0.25em 1.2em;
+    margin-bottom: -0.7em;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(42,77,191,0.10);
     display: inline-block;
+    text-align: center;
 }
-
-.campaign-label {
-    color: var(--secondary-color);
-    font-weight: 700;
-    margin-bottom: var(--spacing-xs);
+.campaign-label-pink::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: #2A4DBF transparent transparent transparent;
+    width: 0;
+    height: 0;
 }
-
-.campaign-text {
-    font-size: 1.2rem;
-    font-weight: 700;
+.solution-cta-pill {
+    background: #22b100 !important;
+    color: #fff !important;
+    font-size: 1.25rem;
+    font-weight: 900;
+    border-radius: 999px !important;
+    padding: 1.1em 2.8em 1.1em 2.2em !important;
+    box-shadow: 0 6px 24px 0 rgba(34,177,0,0.18);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    border: 2px solid #fff;
+    min-width: 0;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s;
+}
+.solution-cta-pill i.fa-line {
+    font-size: 1.4em;
+    margin-right: 0.3em;
+}
+.solution-cta-arrow {
+    display: flex;
+    align-items: center;
+    margin-left: 0.7em;
+    font-size: 1.3em;
+}
+.solution-cta-pill:hover {
+    background: #1a8c00 !important;
+    border-color: #fff;
+    transform: translateY(-2px) scale(1.03);
+    opacity: 0.97;
+}
+@media (max-width: 600px) {
+    .solution-campaign {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    .campaign-label-pink {
+        font-size: 0.85rem;
+        padding: 0.18em 0.7em 0.18em 0.7em;
+    }
+    .solution-cta-pill {
+        font-size: 1.05rem;
+        padding: 0.8em 1.2em 0.8em 1.2em !important;
+    }
+    .solution-cta-arrow {
+        font-size: 1.1em;
+        margin-left: 0.4em;
+    }
 }
 
 /* Narrow Section */
@@ -491,32 +657,94 @@ nav a {
 
 .performance-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(4, 1fr); /* PCは4カラム固定 */
+    gap: 2.2rem;
+    margin-bottom: 2.5rem;
     text-align: center;
 }
 
 .performance-item {
-    background-color: #fff;
-    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18);
+    padding: 2.2rem 1.2rem 2rem 1.2rem;
+    min-width: 0;
+    min-height: 170px;
+}
+
+.performance-label {
+    font-size: 0.98rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 0.7em;
+    letter-spacing: 0.02em;
 }
 
 .performance-number {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: var(--spacing-xs);
+    color: #FF6633;
+    line-height: 1.1;
+    margin-bottom: 0.2em;
 }
 
-.performance-number span {
-    font-size: 1.4rem;
+.performance-unit {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 0.1em;
 }
 
 .performance-text {
     font-size: 1rem;
     line-height: 1.6;
+}
+
+/* =============================
+ * 実績紹介見出し：アドバイザー青ブロックと同じ色・角丸・影に統一
+ * ============================= */
+.performance-title-strong {
+    background: #1B3C8D;
+    color: #fff;
+    text-align: center;
+    padding: 2.2rem 0;
+    border-radius: 0;
+    margin-bottom: 2.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    box-shadow: none;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100vw;
+}
+.performance-title-em {
+    color: #ffe96b;
+    font-size: 2.3rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    display: inline-block;
+    margin: 0 0.1em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    border-bottom: 3px solid #ff4e4e;
+    padding-bottom: 0.1em;
+}
+@media (max-width: 900px) {
+    .performance-title-strong {
+        font-size: 1.2rem;
+        padding: 1.1rem 0.5rem 1.1rem 0.5rem;
+    }
+    .performance-title-em {
+        font-size: 1.3rem;
+        border-bottom-width: 2px;
+    }
 }
 
 /* Advisor Section */
@@ -570,7 +798,7 @@ nav a {
     background: #fff;
     border-radius: 8px;
     padding: var(--spacing-lg);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18) !important;
 }
 
 .voice-content {
@@ -672,7 +900,7 @@ nav a {
     background: #fff;
     border-radius: 8px;
     padding: var(--spacing-xl);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18) !important;
     flex: 1;
     width: 50%;
     display: flex;
@@ -841,7 +1069,7 @@ footer {
     }
 
     .performance-items {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* SPは1カラム */
     }
 
     .voice-items {
@@ -1020,4 +1248,487 @@ footer {
     .hero-catch {
         font-size: 1.35rem !important;
     }
+}
+
+/* サブコピーのPC/SP表示切り替え */
+.pc-sub { display: inline; }
+.sp-sub { display: none; }
+@media (max-width: 900px) {
+    .pc-sub { display: none; }
+    .sp-sub { 
+        display: inline;
+        font-size: 0.80rem;
+    }
+}
+
+/* =============================
+ * お悩みポイント 吹き出しデザイン
+ * ============================= */
+.problem-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 2.5rem;
+    margin: 2.5rem 0;
+}
+.problem-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem;
+    min-width: 280px;
+    max-width: 420px;
+    font-size: 1.15rem;
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+}
+.problem-bubble::before {
+    content: '"';
+    position: absolute;
+    top: 1.2rem;
+    left: 1.2rem;
+    font-size: 2.5rem;
+    color: #666;
+    font-family: serif;
+    opacity: 0.7;
+}
+.problem-bubble::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -18px;
+    transform: translateX(-50%);
+    border-width: 18px 18px 0 18px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+}
+
+/* PCは3列2段（6個）で横並び */
+@media (min-width: 900px) {
+    .problem-bubbles {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2.5rem 2.5rem;
+    }
+    .problem-bubble {
+        flex: 1 1 28%;
+        min-width: 320px;
+        max-width: 480px;
+    }
+}
+
+/* SPは縦並び */
+@media (max-width: 899px) {
+    .problem-bubbles {
+        flex-direction: column;
+        gap: 1.2rem 0;
+        align-items: center;
+    }
+    .problem-bubble {
+        min-width: 0;
+        max-width: 95vw;
+        width: 100%;
+        padding: 1.2rem 1rem;
+        font-size: 1rem;
+    }
+    .problem-bubble::before {
+        font-size: 2rem;
+        top: 0.7rem;
+        left: 0.7rem;
+    }
+    .problem-bubble::after {
+        border-width: 14px 14px 0 14px;
+        bottom: -14px;
+    }
+}
+
+/* 小さい画面での文字サイズ調整 */
+@media (max-width: 900px) {
+    .container {
+        max-width: 98vw;
+        padding: 0 0.7rem;
+    }
+    body {
+        font-size: 0.97rem;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        max-width: 100vw;
+        padding: 0 0.3rem;
+    }
+    body {
+        font-size: 0.93rem;
+    }
+}
+
+/* =============================
+ * アドバイザー紹介：全体を青いブロックで囲む（横並び対応）
+ * ============================= */
+.advisor-blue-block {
+    background: #1B3C8D;
+    color: #fff;
+    border-radius: 24px;
+    padding: 2.2rem 2rem 2.2rem 2rem;
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+}
+.advisor-text-block {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 600px;
+}
+.advisor-photo-block {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+    height: 280image.pngpx;
+    justify-content: flex-end;
+    flex: 1 1 0;
+}
+.advisor-photo {
+    width: 170px;
+    height: 280px;
+    aspect-ratio: 105/163;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.13);
+    display: block;
+    border: 4px solid #fff;
+}
+.advisor-blue-block .advisor-copy {
+    color: #ffe96b;
+    font-size: 2rem;
+    border-color: #ffe96b;
+    background: transparent;
+}
+.advisor-blue-block .advisor-copy::after {
+    border-left: 4px solid #ffe96b;
+    border-bottom: 4px solid #ffe96b;
+    background: #1B3C8D;
+}
+.advisor-blue-block .advisor-lead,
+.advisor-blue-block .advisor-list,
+.advisor-blue-block .advisor-conclusion {
+    color: #fff;
+}
+.advisor-blue-block .advisor-list li {
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+@media (max-width: 900px) {
+    .advisor-blue-block {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: stretch;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    }
+    .advisor-photo-block {
+        justify-content: center;
+        gap: 1rem;
+        height: 163px;
+    }
+    .advisor-photo {
+        width: 105px;
+        height: 163px;
+        min-width: 60px;
+        max-width: 105px;
+    }
+    .advisor-text-block {
+        max-width: 100%;
+    }
+}
+
+/* =============================
+ * solution-wrapper：水色背景・幅100%・余白なし・角丸なし
+ * ============================= */
+.solution-wrapper {
+    background: #f3fbff;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* --- solution-campaign特典案内ボックス完全再現 --- */
+.campaign-gift-box {
+    background: #d6eccf;
+    border: 3px solid #22b100;
+    border-radius: 10px;
+    margin-top: 2.2rem;
+    margin-bottom: 0.5rem;
+    padding: 1.1rem 1.5rem 1.2rem 1.5rem;
+    max-width: 750px;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 12px rgba(34,177,0,0.07);
+}
+.campaign-gift-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.08rem;
+    color: #2A4DBF;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.04em;
+    gap: 0.7em;
+}
+.campaign-gift-title-text {
+    color: #2A4DBF;
+    font-weight: 900;
+    font-size: 1.08rem;
+    letter-spacing: 0.04em;
+    display: inline-block;
+}
+.campaign-gift-title-line {
+    flex: 1 1 0;
+    height: 2px;
+    background: #2A4DBF;
+    border-radius: 1px;
+    min-width: 32px;
+    max-width: 80px;
+    margin: 0 0.5em;
+}
+.campaign-gift-maintext {
+    text-align: center;
+    margin: 1.2em 0 0.5em 0;
+}
+.campaign-gift-maintext-lead {
+    font-size: 1.15rem;
+    color: #222;
+    font-weight: 400;
+    margin-bottom: 0.1em;
+    letter-spacing: 0.03em;
+}
+.campaign-gift-maintext-strong {
+    font-size: 2.4rem;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin: 0.1em 0 0.1em 0;
+    line-height: 1.1;
+}
+@media (max-width: 700px) {
+    .campaign-gift-maintext-strong {
+        font-size: 1.5rem;
+    }
+    .campaign-gift-maintext-lead {
+        font-size: 0.98rem;
+    }
+    .campaign-gift-title-line {
+        min-width: 12px;
+        max-width: 30px;
+    }
+}
+.campaign-gift-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+}
+.campaign-gift-left {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: left;
+}
+.campaign-gift-coupon-label {
+    color: #228b22;
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+.campaign-gift-coupon-main {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+.campaign-gift-coupon-icon {
+    background: #22b100;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 0.25em 0.7em;
+    margin-right: 0.2em;
+    display: inline-block;
+}
+.campaign-gift-coupon-percent {
+    color: #22b100;
+    font-size: 2.1rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    display: inline-block;
+}
+.campaign-gift-center {
+    flex: 0 0 auto;
+    margin: 0 0.7em;
+}
+.campaign-gift-img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #22b100;
+    background: #fff;
+    display: block;
+}
+.campaign-gift-right {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: left;
+}
+.campaign-gift-note {
+    color: #228b22;
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+.campaign-gift-movie {
+    color: #228b22;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 0.1em;
+}
+.campaign-gift-movie-strong {
+    color: #228b22;
+    font-size: 1.25em;
+    font-weight: 900;
+    margin-left: 0.2em;
+}
+@media (max-width: 700px) {
+    .campaign-gift-box {
+        padding: 0.7rem 0.5rem 0.8rem 0.5rem;
+    }
+    .campaign-gift-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.7rem;
+    }
+    .campaign-gift-left, .campaign-gift-right {
+        text-align: center;
+    }
+    .campaign-gift-center {
+        margin: 0.5em 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .performance-items {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+}
+
+/* セクション見出しのフォントサイズを統一 */
+.section-title, .performance-title-strong, .advisor-copy {
+    font-size: 1.8rem !important;
+}
+
+/* actionセクションのタイトル用スタイル */
+.action .section-title {
+    color: #fff;
+}
+
+/* ファーストビューのメダル画像配置 */
+.hero-medals {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: -1.5rem 0 1.5rem 0;
+    background: transparent;
+}
+.hero-medal-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+@media (max-width: 600px) {
+    .hero-medal-img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(100deg, #1b3c8d 10%, #00bfff 50%, #1b3c8d 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 6px rgba(27,60,141,0.10));
+}
+
+/* ロゴスライダー */
+.logo-slider-wrapper {
+    width: 100vw;
+    background: #fff;
+    padding: 1.2rem 0 0.7rem 0;
+    overflow: hidden;
+    position: relative;
+}
+.logo-slider {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.logo-track {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    animation: logo-scroll 32s linear infinite linear;
+    width: max-content;
+}
+.logo-img {
+    height: 48px;
+    width: calc((100vw - 2.5rem * 7) / 8);
+    min-width: 100px;
+    max-width: 180px;
+    object-fit: contain;
+    background: #fff;
+    padding: 0.2rem 1.2rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: block;
+}
+.logo-slider-divider {
+    width: 100vw;
+    height: 2px;
+    background: #e5e5e5;
+    margin: 1.2rem 0 0 0;
+}
+@keyframes logo-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 900px) {
+  .logo-img {
+    height: 36px;
+    width: 80px;
+    min-width: 60px;
+    max-width: 100px;
+  }
+}
+
+.solution-em {
+  color: #1B3C8D;
+  font-weight: bold;
 } 

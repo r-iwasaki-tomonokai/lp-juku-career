@@ -687,58 +687,17 @@ body {
 .performance {
     padding: var(--spacing-xl) 0;
     background-color: var(--light-gray);
-}
-
-.performance-items {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* PCは4カラム固定 */
-    gap: 2.2rem;
-    margin-bottom: 2.5rem;
     text-align: center;
 }
-
-.performance-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18);
-    padding: 2.2rem 1.2rem 2rem 1.2rem;
-    min-width: 0;
-    min-height: 170px;
+.performance-emphasis {
+    font-weight: bold;
+    color: #005BBB;
+    font-size: 1.4em;
 }
 
-.performance-label {
-    font-size: 0.98rem;
-    color: #666;
-    font-weight: 500;
-    margin-bottom: 0.7em;
-    letter-spacing: 0.02em;
-}
-
-.performance-number {
-    font-size: 2.3rem;
-    font-weight: 700;
-    color: #FF6633;
-    line-height: 1.1;
-    margin-bottom: 0.2em;
-}
-
-.performance-unit {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-left: 0.1em;
-}
-
-.performance-text {
-    font-size: 1rem;
-    line-height: 1.6;
-}
 
 /* =============================
- * 実績紹介見出し：アドバイザー青ブロックと同じ色・角丸・影に統一
+ * 実績紹介見出し
  * ============================= */
 .performance-title-strong {
     background: #1B3C8D;
@@ -746,6 +705,7 @@ body {
     text-align: center;
     padding: 2.2rem 0;
     border-radius: 0;
+    margin-top: -3rem;
     margin-bottom: 2.5rem;
     font-size: 1.8rem;
     font-weight: 700;
@@ -772,7 +732,7 @@ body {
 }
 @media (max-width: 900px) {
     .performance-title-strong {
-        font-size: 1.2rem;
+        font-size: 14rem;
         padding: 1.1rem 0.5rem 1.1rem 0.5rem;
     }
     .performance-title-em {
@@ -780,7 +740,28 @@ body {
         border-bottom-width: 2px;
     }
 }
+.solution-medals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
 
+.solution-medal-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    display: inline-block;
+    background: transparent;
+}
+@media (max-width: 767px) {
+    .solution-medal-img {
+        width: 100px;
+        height: 100px;
+    }
+}  
 /* Advisor Section */
 .advisor {
     padding: var(--spacing-xl) 0;
